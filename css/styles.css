@@ -35,6 +35,10 @@ html {
     0px 2px 1px rgba(0, 0, 0, 0.2);
   --modal-close-border-color: rgba(0, 0, 0, 0.1);
   --input-border-color: rgba(33, 33, 33, 0.2);
+  --input-footer-color: rgba(255, 255, 255, 0.6);
+  --input-footer-border: rgba(255, 255, 255, 0.3);
+  --form-input-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 body {
@@ -489,6 +493,50 @@ button {
 .footer .social-link:focus {
   background-color: var(--accent-color);
 }
+
+.subscribe-input {
+  width: 358px;
+  height: 50px;
+  border-radius: 4px;
+  border: 1px solid var(--input-footer-border);
+  padding-left: 16px;
+  background-color: transparent;
+  outline: none;
+  color: var(--input-footer-color);
+}
+
+.subscribe-input:focus {
+  border-color: var(--active-accent-color);
+}
+
+.subscribe-input::placeholder {
+  color: var(--input-footer-color);
+}
+
+.subscribe-btn {
+  margin-left: 16px;
+  transition: var(--transition);
+}
+
+.subscribe-btn:active,
+.subscribe-btn:hover {
+  background-color: var(--active-accent-color);
+}
+
+.submit-icon {
+  margin-left: 10px;
+}
+
+.subscribe-wrapper {
+  display: block;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.subscribe-input-wrapper {
+  display: flex;
+}
+
 /*------------------------PORTFOLIO---------------------------*/
 .portfolio-button {
   font-family: Roboto;
@@ -598,6 +646,11 @@ button {
   transform: translate(-50%, -50%) scale(0.5);
 }
 
+.modal-close:hover,
+.modal-close:focus {
+  fill: currentColor;
+}
+
 .modal {
   width: 528px;
   min-height: 581px;
@@ -623,6 +676,8 @@ button {
   position: absolute;
   top: 8px;
   right: 8px;
+  color: var(--accent-color);
+  outline: none;
 }
 
 .is-hidden {
@@ -641,20 +696,93 @@ button {
   margin-bottom: 30px;
 }
 
+.form-fild {
+  margin-bottom: 10px;
+}
+
+.input-wrapp {
+  position: relative;
+}
+
 .form-input {
   width: 100%;
   height: 40px;
   border: 1px solid var(--input-border-color);
   border-radius: 4px;
-  margin-bottom: 28px;
-  padding-left: 16px;
+  padding-left: 42px;
+  outline: none;
+  transition: var(--transition);
+  cursor: pointer;
 }
 
-.form-coment {
+.form-input::placeholder {
+  color: rgba(117, 117, 117, 0, 5);
+}
+
+.form-input:focus {
+  border-color: var(--active-accent-color);
+  box-shadow: var(--form-input-shadow);
+}
+
+.form-input:focus + .input-icon {
+  fill: var(--accent-color);
+}
+
+.input-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: var(--transition);
+}
+
+.form-comment {
   height: 120px;
-  padding-top: 0px;
+  padding: 12px 16px;
+  resize: none;
 }
 
-.form-coment::placeholder {
-  padding-top: 0px;
+.input-text {
+  font-size: 12px;
+  letter-spacing: 0.01em;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.check-text {
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: var(--main-text-color);
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.check-text span {
+  width: 16px;
+  height: 15px;
+  border: 2px solid var(--dark-color);
+  border-radius: 2px;
+  margin-right: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.policy-icon {
+  fill: transparent;
+}
+
+.policy-check:checked + .check-text span {
+  border: none;
+  background-color: var(--accent-color);
+}
+
+.policy-check:checked + .check-text .policy-icon {
+  fill: var(--light-color);
+}
+
+.Conditions {
+  margin-left: 5px;
 }
