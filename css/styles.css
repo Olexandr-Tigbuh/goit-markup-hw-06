@@ -461,7 +461,7 @@ button {
   margin-right: 70px;
 }
 
-.footer-cont-item:not(:last-child) {
+.footer-cont-item:last-child {
   margin-left: auto;
 }
 
@@ -529,7 +529,6 @@ button {
   display: flex;
   align-items: center;
 }
-
 /*------------------------PORTFOLIO---------------------------*/
 .portfolio-button {
   font-family: Roboto;
